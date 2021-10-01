@@ -48,7 +48,7 @@ if __name__ == '__main__':
     # サンプルとして学習済みVGGを用意
     use_pretrained = True
     net = models.vgg16(pretrained=use_pretrained)
-    net.eval()  # モデルのインスタンスに対して推論モードに設定
+    net.eval()  # モデルのインスタンスに対して推論モードに設定（DropoutやBatchNormの挙動がtrainとevalで異なる）
 
     # 画像を用意
     img_path = '../data/golden_retriever_01.jpg'
